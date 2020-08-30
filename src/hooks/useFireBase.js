@@ -49,11 +49,11 @@ export const useFireBase = () => {
     }
   }, [])
 
-  const pushMessage = async ({ text, uid, timestamp }) => {
+  const pushMessage = async ({ text, uId, timestamp }) => {
     try {
       await firebase.database().ref('/messages').push({
         text,
-        uid,
+        uId,
         timestamp
       })
     } catch (error) {
