@@ -49,5 +49,17 @@ export const useFireBase = () => {
     }
   }, [])
 
-  return [state]
+  const pushMessage = async ({ text, uid, timestamp }) => {
+    try {
+      await firebase.database().ref('/messages').push({
+        text,
+        uid,
+        timestamp
+      })
+    } catch (error) {
+      dispatch({ type: dataActionTypes.error })
+    }
+  }
+
+  return [state, pushMessage]
 }
