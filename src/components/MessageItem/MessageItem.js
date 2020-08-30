@@ -8,8 +8,8 @@ export const MessageItem = ({ message }) => {
   return (
     <div className={messageClassName}>
       <div className="messageItem-head">
-        <div className="messageItem-title">{message.title}</div>
-        <div className="messageItem-time">{message.time}</div>
+        <div className="messageItem-head-title">{message.title}</div>
+        <div className="messageItem-head-time">{message.time}</div>
       </div>
       <div className="messageItem-message">{message.text}</div>
     </div>

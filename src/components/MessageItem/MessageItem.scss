@@ -1,0 +1,38 @@
+.messageItem {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #00bcd4;
+  border-radius: 4px;
+  padding: 0 8px;
+  margin: 16px;
+  max-width: 600px;
+
+  &-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 32px;
+    border-bottom: 1px solid #cfd8dc;
+
+    &-title {
+      font-weight: bold;
+      color: #00838f;
+    }
+
+    &-time {
+      color: #b0bec5;
+    }
+  }
+
+  &-message {
+    padding: 8px 0;
+  }
+
+  &.self {
+    background-color: #b2ebf2;
+  }
+
+  @media screen and (max-width: 1200px) {
+    max-width: 300px;
+  }
+}
