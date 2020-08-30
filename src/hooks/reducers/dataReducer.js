@@ -8,7 +8,6 @@ export const dataReducer = (state, { type, payload }) => {
         isLoading: true
       }
     case dataActionTypes.success:
-      console.log('3', payload)
       return {
         ...state,
         isLoading: false,
