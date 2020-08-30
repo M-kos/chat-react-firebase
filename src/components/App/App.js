@@ -1,4 +1,5 @@
 import React from 'react'
+import { useFireBase } from '../../hooks/useFireBase'
 
 import { MesssageList } from '../MessageList/MessageList'
 import { SendForm } from '../SendForm/SendForm'
@@ -20,13 +21,15 @@ const mochVes = [
   },
   {
     id: 3,
-    title: 'zxc',
+    title: 'z111xc',
     time: 12345,
     text: 'qwewqew qqwrkjqpowr qpwo jopqwr pqopoqwroqpkqpwo kopqkw ropqr'
   }
 ]
 
-function App() {
+const App = () => {
+  const [state] = useFireBase()
+
   return (
     <div className="App">
       <MesssageList messsageList={mochVes} />
