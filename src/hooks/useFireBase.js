@@ -34,7 +34,7 @@ export const useFireBase = () => {
         .ref('/messages')
         .on('value', (snapshot) => {
           snapshot.forEach((snap) => {
-            messages.push(snap.val())
+            messages.push({ ...snap.val(), id: snap.key })
           })
 
           dispatch({
