@@ -34,8 +34,8 @@ const App = () => {
 
   return (
     <div className="App">
-      <MesssageList messsageList={mochVes} />
-      <SendForm />
+      <MesssageList messsageList={state.messages} />
+      <SendForm submitHandler={pushMessage} uId={userId} />
     </div>
   )
 }
