@@ -11,9 +11,18 @@ const App = () => {
   const [state, pushMessage] = useFireBase()
   const [userId] = useGetId()
 
+  const { isLoading, isError, messages } = state
+
   return (
     <div className="App">
-      <MesssageList messsageList={state.messages} uId={userId} />
+      {isError && <div>Something went wrong...</div>}
+
+      {isLoading ? (
+        <div className="App-loading">Loading...</div>
+      ) : (
+        <MesssageList messsageList={messages} uId={userId} />
+      )}
+
       <SendForm submitHandler={pushMessage} uId={userId} />
     </div>
   )
