@@ -7,34 +7,13 @@ import { SendForm } from '../SendForm/SendForm'
 
 import './App.scss'
 
-const mochVes = [
-  {
-    id: 1,
-    title: 'qwe',
-    time: 12345,
-    text: 'qwewqew qqwrkjqpowr qpwo jopqwr pqopoqwroqpkqpwo kopqkw ropqr'
-  },
-  {
-    id: 2,
-    title: 'ads',
-    time: 12345,
-    text: 'qwewqew qqwrkjqpowr qpwo jopqwr pqopoqwroqpkqpwo kopqkw ropqr'
-  },
-  {
-    id: 3,
-    title: 'z111xc',
-    time: 12345,
-    text: 'qwewqew qqwrkjqpowr qpwo jopqwr pqopoqwroqpkqpwo kopqkw ropqr'
-  }
-]
-
 const App = () => {
   const [state, pushMessage] = useFireBase()
   const [userId] = useGetId()
 
   return (
     <div className="App">
-      <MesssageList messsageList={state.messages} />
+      <MesssageList messsageList={state.messages} uId={userId} />
       <SendForm submitHandler={pushMessage} uId={userId} />
     </div>
   )
