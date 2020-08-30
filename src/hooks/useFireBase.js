@@ -27,12 +27,12 @@ export const useFireBase = () => {
     firebase.initializeApp(firebaseConfig)
 
     try {
-      const messages = []
-
       firebase
         .database()
         .ref('/messages')
         .on('value', (snapshot) => {
+          const messages = []
+
           snapshot.forEach((snap) => {
             messages.push({ ...snap.val(), id: snap.key })
           })
