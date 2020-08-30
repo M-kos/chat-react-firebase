@@ -1,5 +1,6 @@
 import React from 'react'
 import { useFireBase } from '../../hooks/useFireBase'
+import { useGetId } from '../../hooks/useGetId'
 
 import { MesssageList } from '../MessageList/MessageList'
 import { SendForm } from '../SendForm/SendForm'
@@ -28,7 +29,8 @@ const mochVes = [
 ]
 
 const App = () => {
-  const [state] = useFireBase()
+  const [state, pushMessage] = useFireBase()
+  const [userId] = useGetId()
 
   return (
     <div className="App">
