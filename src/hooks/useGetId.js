@@ -6,6 +6,13 @@ const getRandom = () => {
   return Math.ceil(Math.random() * 10000)
 }
 
+/**
+ * Хук для установки UserId
+ *
+ * @hook
+ * @return {string} userId
+ */
+
 export const useGetId = () => {
   const [userId, setId] = useState()
 

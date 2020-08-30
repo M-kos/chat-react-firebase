@@ -14,6 +14,14 @@ const firebaseConfig = {
   appId: '1:276753583404:web:cd17c510af382a139df089'
 }
 
+/**
+ * Хук для работы с базой данных
+ *
+ * @hook
+ * @return {object} state
+ * @return {function} pushMessage
+ */
+
 export const useFireBase = () => {
   const [state, dispatch] = useReducer(dataReducer, {
     messages: [],

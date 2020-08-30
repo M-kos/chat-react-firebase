@@ -1,3 +1,8 @@
+/**
+ * Функция принимает время в милисекундах и возвращает форматированные дату и время
+ * @param  {number} timestamp
+ * @return {string} Форматированные дата и время
+ */
 export const getDateAndTime = (timestamp) =>
   new Intl.DateTimeFormat('ru', {
     year: 'numeric',
