@@ -8,5 +8,6 @@ export const MesssageList = ({ messsageList = [] }) => {
   const mapMessageList = messsageList.map((message) => {
     return <MessageItem key={message.id} message={message} />
   })
+
   return <div className="messsageList">{mapMessageList}</div>
 }

@@ -1,21 +1,36 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import './SendForm.scss'
 
-export const SendForm = () => {
-  const formHandler = (event) => {
+export const SendForm = ({ submitHandler, uId }) => {
+  const [text, setText] = useState('')
+
+  const formHandler = async (event) => {
     event.preventDefault()
-    console.log('form')
+    if (text) {
+      await submitHandler({
+        uId,
+        text,
+        timestamp: Date.now()
+      })
+
+      setText('')
+    }
+  }
+
+  const inputHandler = (event) => {
+    setText(event.target.value)
   }
 
   return (
     <div className="sendForm-wrapper">
       <form className="sendForm" onSubmit={formHandler}>
-        <textarea
-          className="sendForm-textarea"
+        <input
+          className="sendForm-input"
           placeholder="Enter your message..."
-          rows="3"
-        ></textarea>
+          onChange={inputHandler}
+          value={text}
+        />
         <button className="sendForm-button">
           <i className="material-icons">send</i>
         </button>
