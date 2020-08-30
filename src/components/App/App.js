@@ -15,7 +15,7 @@ const App = () => {
 
   return (
     <div className="App">
-      {isError && <div>Something went wrong...</div>}
+      {isError && <div className="App-error">Something went wrong...</div>}
 
       {isLoading ? (
         <div className="App-loading">Loading...</div>
